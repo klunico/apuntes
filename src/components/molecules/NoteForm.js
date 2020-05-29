@@ -21,8 +21,10 @@ const NoteForm = (props) => {
  	);
 
 	const handleChange = (event) => {
+    localStorage.setItem('note', event.target.value);
+
 		setNote( event.target.value );
-	}
+	};
 
 	const handleSubmit = (event) => {
 		alert("Note was saved!");
@@ -36,7 +38,9 @@ const NoteForm = (props) => {
     			<br />
   				<Textarea
   					value={note} 
-  					onChange={handleChange} />
+  					onChange={handleChange} 
+            onfocus=""
+          />
     		</Label>
     			<br />
     		<Input type={'submit'} value={'Save'} />

@@ -10,20 +10,15 @@ const NoteStyle = styled.div `
 	padding: 8px;
 `;
 
-function Note(props) {
-
-	const note = props.notes.map((note) =>
-		<NoteStyle key={note.id}>
-			<h3>{note.subject}</h3>			
-			<p>{note.body}</p>
-		</NoteStyle>
-	);
+function Note({id, subject, body}) {
 
 	return (
-		<div>
-			{note}
-		</div>
-	);
+
+		<NoteStyle key={id}>
+			<h3>{subject}</h3>			
+			<p>{body}</p>
+		</NoteStyle>
+	)
 }
 
 export default Note;
