@@ -13,16 +13,14 @@ const List = styled.div`
 
 function NoteList({ notes }) {
 
-	const renderList = () => {
-		return notes.map(({ note }) =>  {
-			return <Note id={note.id} subject={note.subject} body={note.body} />
-		})
-	}
-				
-	return (
+	const renderList = notes.map((note) =>  
+			<Note id={note.id} subject={note.subject} body={note.body} />
+		);
+		
+	return ( 
 			<List>
-			{renderList}
-	    </List>
+				{renderList}	
+			</List>
 	);
 };
 

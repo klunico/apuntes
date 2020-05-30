@@ -13,7 +13,6 @@ const NoteStyle = styled.div `
 function Note({id, subject, body}) {
 
 	return (
-
 		<NoteStyle key={id}>
 			<h3>{subject}</h3>			
 			<p>{body}</p>

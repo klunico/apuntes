@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import NoteForm from '../molecules/NoteForm';
+import NoteForm from '../molecules/NoteForm.js';
+import Note from '../molecules/Note.js';
 
 const DisplayStyle = styled.div`
 	min-height: 80vh;
@@ -8,11 +9,24 @@ const DisplayStyle = styled.div`
 	background-color: red;
 `;
 
-function NoteDisplay() {
+function NoteDisplay({id, subject, body}) {
+
+	const showDisplay = () => {
+	//if(condition) note is selected show note
+		if(id!==0) {
+			return <Note id={id} subject={subject} body={body} />
+	//else show noteform
+		} else {
+			return <NoteForm />
+		}
+	} 
+	
+			// <NoteForm />
+			// <Note id={id} subject={subject} body={body} />
 
 	return (
 		<DisplayStyle>
-		<NoteForm />
+			{showDisplay}	
 		</DisplayStyle>
 	);
 }

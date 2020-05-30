@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Input from '../atoms/Input';
+import Input from '../atoms/Input.js';
 
 
 const Textarea = styled.textarea`

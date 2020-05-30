@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import NoteHeader from './components/organisms/NoteHeader';
-import NoteList from './components/organisms/NoteList';
-import NoteDisplay from './components/organisms/NoteDisplay';
+import NoteHeader from './components/organisms/NoteHeader.js';
+import NoteList from './components/organisms/NoteList.js';
+import NoteDisplay from './components/organisms/NoteDisplay.js';
 
 // import NoteAPI from './NoteAPI'
 
@@ -14,7 +14,7 @@ const AppStyle = styled.div`
 `;
 
 function App() {
-  
+
   const notes = [
   {id: 1, subject: 'First note', body: 'The first note of the list.'},
   {id: 2, subject: 'Second note', body: 'The second note of the list.'},
@@ -30,7 +30,7 @@ function App() {
   return (
     <AppStyle>
       <NoteHeader />
-      <NoteDisplay />
+      <NoteDisplay id='0' subject='testSubject' body='testBody' />
       <NoteList notes={notes} />      
     </AppStyle>
   );
