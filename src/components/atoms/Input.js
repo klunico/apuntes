@@ -8,12 +8,8 @@ const InputStyle = styled.input`
   border: 4px solid lightblue;
 `;
 
-
 function Input({type, value}) {
-
-	return (
-		<InputStyle type={type} value={value} />
-	);
+	return <InputStyle type={type} defaultValue={value} />;
 }
 
 export default Input;

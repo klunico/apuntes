@@ -1,23 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Header } from 'semantic-ui-react';
 
-	const Header = styled.div`
-	  font-size: calc(10px + 2vmin);
-	  min-height: 20vh;
-	  min-width: 100vw;
-	  background-color: green;
-	`;
-	
+const HeaderDiv = styled.div`
+  min-height: 20vh;
+  min-width: 100vw;
+  background-color: green;
+`;
+
 function NoteHeader() {
-
-
 	return (
-		  <Header>
-        <h3>
-          Header 
-        </h3>
-      </Header>
-	);
+		<HeaderDiv>
+			<Header as='h1'>First Header</Header>
+		</HeaderDiv>
+		);
 }
 
 export default NoteHeader;
