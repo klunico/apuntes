@@ -9,7 +9,8 @@ const DisplayStyle = styled.div`
 	background-color: red;
 `;
 
-function NoteDisplay({id, subject, body}) {
+function NoteDisplay() {
+// function NoteDisplay({id, subject, body}) {
 
 	// const showDisplay = () => {
 	// //if(condition) note is selected show note

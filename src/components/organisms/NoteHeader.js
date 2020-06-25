@@ -12,6 +12,7 @@ function NoteHeader() {
 	return (
 		<HeaderDiv>
 			<Header as='h1'>First Header</Header>
+			
 		</HeaderDiv>
 		);
 }

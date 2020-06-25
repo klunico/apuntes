@@ -1,6 +1,8 @@
 import React from 'react';
 import Note from '../molecules/Note.js';
 import styled from 'styled-components';
+import { notes } from './../../notes';
+
 
 const List = styled.div`
   min-height: 80vh;
@@ -11,10 +13,11 @@ const List = styled.div`
   justify-content: center;
 `;
 
-function NoteList({ notes }) {
+
+function NoteList(props) {
 
 	const renderList = notes.map((note) =>  
-			<Note id={note.id} subject={note.subject} body={note.body} />
+			<Note key={note.id} subject={note.subject} body={note.body} />
 		);
 		
 	return ( 

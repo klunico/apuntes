@@ -24,31 +24,45 @@ const NoteForm = (props) => {
   const [note, setNote] = useState(
     {
       id: aId, 
+      date: new Date(),
       subject: 'Write subject' , 
       body: 'Write body' 
-    });
+    }
+  );
 
 	const handleChange = (event) => {
-		setNote( event.target.value );
+    setNote( 
+      {
+        subject: event.target.value,
+        body: event.target.value,
+      }
+    );
 	};
 
 	const handleSubmit = (event) => {
 		alert("Note was saved!");
+    //redux dispatch (action)
+    //dispatch(addNote(note))
+    setNote({
+      id: generate(),
+      date: new Date(),
+      subject: event.target.value,
+      body: event.target.value,
+    }
+  );
 		event.preventDefault();
 	}
 
   useEffect(() => {
-    console.log("This is the useEffect GET localStorage.getItem.")
+    localStorage.setItem("note", JSON.stringify(note));
+  });
+
+  useEffect(() => {
     const data = localStorage.getItem("note");
     if (data) {
       setNote(JSON.parse(data));
     }
   }, []);
-
-  useEffect(() => {
-    console.log("This is the useEffect SET localStorage.setItem.")
-    localStorage.setItem("note", JSON.stringify(note));
-  });
 
 	return (
     	<form onSubmit={handleSubmit}>
