@@ -2,6 +2,9 @@ import React from 'react';
 import Note from '../molecules/Note.js';
 import styled from 'styled-components';
 import { notes } from './../../notes';
+import { bindActionCreators } from 'redux';
+import setNotes from '../../actions/index';
+// src/actions/index.js
 
 
 const List = styled.div`
@@ -27,4 +30,12 @@ function NoteList(props) {
 	);
 };
 
+function mapDispatchToProps(dispatch){
+	return bindActionCreators(
+		{ setNotes: setNotes },
+		dispatch
+	);
+}
+
 export default NoteList;
+// export default connect(null, mapDispatchToProps)(NoteList);
